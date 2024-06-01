@@ -1,0 +1,10 @@
+services:
+  personal-website:
+    command: tail -f /dev/null
+    volumes:
+      - ./src/web:/workspace/src:rw
+      - ./.vscode:/workspace/.vscode:rw
+      - ./.dockerignore:/workspace/.dockerignore:rw
+      - ./.env:/workspace/.env:rw
+      - ./docker-compose.dev.yml:/workspace/docker-compose.dev.yml:rw
+      - ./docker-compose.yml:/workspace/docker-compose.yml:rw

@@ -1,0 +1,34 @@
+services:
+  personal-website:
+    build: 
+      context: ./
+      dockerfile: src/web/Dockerfile
+    container_name: personal-website
+    volumes:
+      - ./logs/web:/workspace/logs:rw
+      - ./static:/workspace/static:rw
+      - ./templates:/workspace/templates:rw
+    networks:
+      - personal_network
+    user: app
+    restart: unless-stopped
+    env_file:
+      - .env
+
+  nginx-personal-website:
+    build: 
+      context: ./
+      dockerfile: src/nginx/Dockerfile
+    container_name: nginx-personal-website
+    networks: 
+      - personal_network
+    volumes:
+      - ./static:/static:rw
+      - ./logs/nginx:/var/log/nginx:rw
+    restart: unless-stopped
+    env_file:
+      - .env
+
+networks:
+  personal_network:
+    driver: bridge
