@@ -1,61 +1,65 @@
 'use strict';
 
-
 // Hide project tab after it got deselected
-document.addEventListener('DOMContentLoaded', () => {
-    const navbarItems = document.querySelectorAll('.navbar-item');
-    const lastItem = navbarItems[navbarItems.length - 1];
+$(document).ready(function () {
+  const $navbarItems = $('.navbar-item');
+  const $lastItem = $navbarItems.last();
 
-    navbarItems.forEach((item, index) => {
-        if (index < navbarItems.length - 1) { // Exclude the last li element (About project)
-            item.addEventListener('click', () => {
-                lastItem.classList.add('hidden');
-            });
-        }
-    });
+  $navbarItems.slice(0, -1).on('click', function () {
+    $lastItem.addClass('hidden');
+  });
 });
 
-
 // When a project is clicked - open it in a new tab, autofill its data
-document.addEventListener('DOMContentLoaded', () => {
-    const projectLinks = document.querySelectorAll('ul.project-list > li > a');
+$(document).ready(function () {
+  const $projectLinks = $('ul.project-list > li > a');
 
-    projectLinks.forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent default link behavior
+  $projectLinks.on('click', function (event) {
+    event.preventDefault(); // Prevent default link behavior
 
-            // Get the project name and image URL
-            const projectName = this.querySelector('.project-title').textContent;
-            
-            // Unhide "About Project" tab
-            const navbarItems = document.querySelectorAll('ul.navbar-list > li');
-            const lastNavbarItem = navbarItems[navbarItems.length - 1];
-            lastNavbarItem.classList.remove('hidden');
+    // Get the project name
+    const projectName = $(this).find('.project-title').text();
 
-            const lastNavbarButton = lastNavbarItem.querySelector('button');
-            if (lastNavbarButton) { lastNavbarButton.classList.add('active'); }
-            
-            // Hide other tabs
-            navbarItems.forEach((item, index) => {
-                if (index < navbarItems.length - 1) {
-                    const button = item.querySelector('button');
-                    if (button) {
-                        button.classList.remove('active');
-                    }
-                }
-            });
-            const articles = document.querySelectorAll('article[data-page]');
-            articles.forEach(article => { article.classList.remove('active'); });
-            
-            // Show about project tab contents
-            const aboutProjectArticle = document.querySelector('article.about[data-page="about project"]');
-            if (aboutProjectArticle) {
-                aboutProjectArticle.classList.add('active');
-            }
+    // Unhide "About Project" tab
+    const $navbarItems = $('ul.navbar-list > li');
+    const $lastNavbarItem = $navbarItems.last();
+    $lastNavbarItem.removeClass('hidden');
 
-            
-            // Update project name
-            document.querySelector('#project_name').textContent = projectName;
-        });
+    const $lastNavbarButton = $lastNavbarItem.find('button');
+    if ($lastNavbarButton.length) { 
+      $lastNavbarButton.addClass('active'); 
+    }
+
+    // Hide other tabs
+    $navbarItems.slice(0, -1).find('button').removeClass('active');
+    const $articles = $('article[data-page]');
+    $articles.removeClass('active');
+
+    // Show about project tab contents
+    const $aboutProjectArticle = $('article.about[data-page="about project"]');
+    if ($aboutProjectArticle.length) {
+      $aboutProjectArticle.addClass('active');
+    }
+
+     
+
+    // Make AJAX request to get project info
+    $.ajax({
+      url: `/get_project_info/${projectName}`,
+      method: 'GET',
+      dataType: 'json',
+      success: function (data) {
+        // Replace .project-preview src with the one from JSON
+        $('.project-preview').attr('src', data.image_src);
+
+        // Hide all sections and show the active one
+        console.log(data.active_section);
+        $('article.about section.about-text').addClass('inactive');
+        $(`#${data.active_section}`).removeClass('inactive');
+      },
+      error: function (xhr, status, error) {
+        console.error(`Error fetching project info: ${error}`);
+      }
     });
+  });
 });

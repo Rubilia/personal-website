@@ -74,6 +74,10 @@
   font-size: var(--fs-7);
 }
 
+.inactive {
+  display: none;
+}
+
 /* 
 Project tab
 */

@@ -14,4 +14,8 @@ def main_page():
 
 @bp.route("/get_project_info/<proj_name>")
 def get_project_info(proj_name: str):
-    pass
+    proj_id = proj_name.replace(' ', '-').lower()
+    return flask.jsonify({
+        'image_src': '/static/images/projects/' + proj_id + '.jpg',
+        'active_section': proj_id
+    })
