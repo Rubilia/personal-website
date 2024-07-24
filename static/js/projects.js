@@ -49,6 +49,8 @@ $(document).ready(function () {
       method: 'GET',
       dataType: 'json',
       success: function (data) {
+        $('#project_name').text = projectName
+
         // Replace .project-preview src with the one from JSON
         $('.project-preview').attr('src', data.image_src);
 

@@ -6,3 +6,4 @@ instance/
 .webassets-cache
 logs/
 .vscode/launch.json
+vps-info.txt
