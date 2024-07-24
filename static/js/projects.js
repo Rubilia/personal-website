@@ -58,6 +58,10 @@ $(document).ready(function () {
         // Hide all sections and show the active one
         $('article.about section.about-text').addClass('inactive');
         $(`#${data.active_section}`).removeClass('inactive');
+
+        // Show about section
+        $('#about-section').removeClass('inactive');
+        $('#about-section').addClass('active');
       },
       error: function (xhr, status, error) {
         console.error(`Error fetching project info: ${error}`);
