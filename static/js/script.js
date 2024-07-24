@@ -73,8 +73,6 @@ formInputs.each(function () {
 const navigationLinks = $("[data-nav-link]");
 const pages = $("[data-page]");
 
-console.log(pages);
-
 navigationLinks.each(function () {
   $(this).on("click", function () {
     const targetPage = $(this).text().toLowerCase();

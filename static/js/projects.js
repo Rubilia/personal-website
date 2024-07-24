@@ -49,13 +49,13 @@ $(document).ready(function () {
       method: 'GET',
       dataType: 'json',
       success: function (data) {
-        $('#project_name').text = projectName
+        console.log($('#project_name'));
+        $('#project_name').text(projectName);
 
         // Replace .project-preview src with the one from JSON
         $('.project-preview').attr('src', data.image_src);
 
         // Hide all sections and show the active one
-        console.log(data.active_section);
         $('article.about section.about-text').addClass('inactive');
         $(`#${data.active_section}`).removeClass('inactive');
       },
