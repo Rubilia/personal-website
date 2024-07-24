@@ -20,6 +20,8 @@ services:
       context: ./
       dockerfile: src/nginx/Dockerfile
     container_name: nginx-personal-website
+    ports:
+      - 80:80
     networks: 
       - personal_network
     volumes:
