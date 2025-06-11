@@ -75,15 +75,19 @@ const pages = $("[data-page]");
 
 navigationLinks.each(function () {
   $(this).on("click", function () {
-    const targetPage = $(this).text().toLowerCase();
+    const $clickedLink = $(this);
+    const targetPage = $clickedLink.data("nav-link");
+
+    navigationLinks.removeClass("active");
+    $clickedLink.addClass("active");
+
     pages.each(function () {
-      if (targetPage === $(this).data("page")) {
-        $(this).addClass("active");
-        navigationLinks.filter(`[data-nav-link="${targetPage}"]`).addClass("active");
+      const $page = $(this);
+      if (targetPage === $page.data("page")) {
+        $page.addClass("active");
         window.scrollTo(0, 0);
       } else {
-        $(this).removeClass("active");
-        navigationLinks.filter(`[data-nav-link="${$(this).data("page")}"]`).removeClass("active");
+        $page.removeClass("active");
       }
     });
   });
