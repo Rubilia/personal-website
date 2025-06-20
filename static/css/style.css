@@ -906,6 +906,25 @@ article.active {
     color: var(--white-2);
     font-weight: var(--fw-300);
   }
+
+  .project-details .stack-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .stack-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--light-gray);
+    font-size: var(--fs-7);
+    font-weight: var(--fw-400);
+    letter-spacing: 0.01em;
+  }
   
   
   
