@@ -600,6 +600,97 @@
 
           <ul class="project-list">
 
+            <li class="project-item active" data-filter-item data-category="systems">
+              <a href="#" class="project-card" data-project-name="USBGuard">
+                <div class="project-card-header">
+                  <div class="project-card-meta">
+                    <span class="project-chip">Systems</span>
+                    <h3 class="project-title">USBGuard</h3>
+                    <p class="project-tagline">Custom kernel module delivering transparent encryption for USB storage.</p>
+                  </div>
+                  <div class="project-pill-group">
+                    <span class="project-pill">Kernel module</span>
+                    <span class="project-pill">USB encryption</span>
+                  </div>
+                </div>
+                <div class="project-body">
+                  <p class="project-summary">Implemented block-level encryption and secure key derivation so removable drives stay protected without extra user tooling.</p>
+                  <ul class="project-details">
+                    <li>
+                      <span class="detail-label">Stack</span>
+                      <span class="detail-value stack-list">
+                        <span class="stack-pill">C</span>
+                        <span class="stack-pill">Linux Kernel</span>
+                        <span class="stack-pill">PBKDF2</span>
+                      </span>
+                    </li>
+                    <li><span class="detail-label">Impact</span><span class="detail-value">Encrypted removable drives automatically on mount</span></li>
+                  </ul>
+                </div>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="cloud">
+              <a href="#" class="project-card" data-project-name="Smart Classroom Assistant">
+                <div class="project-card-header">
+                  <div class="project-card-meta">
+                    <span class="project-chip">Cloud</span>
+                    <h3 class="project-title">Smart Classroom Assistant</h3>
+                    <p class="project-tagline">Serverless attendance system combining facial recognition and storage orchestration.</p>
+                  </div>
+                  <div class="project-pill-group">
+                    <span class="project-pill">OpenFaaS</span>
+                    <span class="project-pill">Ceph Storage</span>
+                  </div>
+                </div>
+                <div class="project-body">
+                  <p class="project-summary">Connected a Flask control plane to AWS Lambda workflows and Ceph-backed persistence to automate classroom check-ins in real time.</p>
+                  <ul class="project-details">
+                    <li>
+                      <span class="detail-label">Stack</span>
+                      <span class="detail-value stack-list">
+                        <span class="stack-pill">AWS</span>
+                        <span class="stack-pill">Flask</span>
+                        <span class="stack-pill">OpenFaaS</span>
+                        <span class="stack-pill">DynamoDB</span>
+                      </span>
+                    </li>
+                    <li><span class="detail-label">Impact</span><span class="detail-value">Reduced roster reconciliation to seconds</span></li>
+                  </ul>
+                </div>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="systems">
+              <a href="#" class="project-card" data-project-name="Distributed Hash Table">
+                <div class="project-card-header">
+                  <div class="project-card-meta">
+                    <span class="project-chip">Systems</span>
+                    <h3 class="project-title">Distributed Hash Table Protocol</h3>
+                    <p class="project-tagline">Ring-topology DHT with resilient UDP messaging.</p>
+                  </div>
+                  <div class="project-pill-group">
+                    <span class="project-pill">Ring Topology</span>
+                    <span class="project-pill">C++ Threads</span>
+                  </div>
+                </div>
+                <div class="project-body">
+                  <p class="project-summary">Authored custom packet formats and multithreaded handlers to keep key/value lookups responsive under churn.</p>
+                  <ul class="project-details">
+                    <li>
+                      <span class="detail-label">Stack</span>
+                      <span class="detail-value stack-list">
+                        <span class="stack-pill">C++</span>
+                        <span class="stack-pill">UDP</span>
+                        <span class="stack-pill">POSIX Threads</span>
+                      </span>
+                    </li>
+                    <li><span class="detail-label">Impact</span><span class="detail-value">Sustained low-latency routing</span></li>
+                  </ul>
+                </div>
+              </a>
+            </li>
+
             <li class="project-item active" data-filter-item data-category="web development">
               <a href="#" class="project-card" data-project-name="Personal Website">
                 <div class="project-card-header">
@@ -687,97 +778,6 @@
                       </span>
                     </li>
                     <li><span class="detail-label">Impact</span><span class="detail-value">Outperformed DQN with less training data</span></li>
-                  </ul>
-                </div>
-              </a>
-            </li>
-
-            <li class="project-item active" data-filter-item data-category="systems">
-              <a href="#" class="project-card" data-project-name="USBGuard">
-                <div class="project-card-header">
-                  <div class="project-card-meta">
-                    <span class="project-chip">Systems</span>
-                    <h3 class="project-title">USBGuard</h3>
-                    <p class="project-tagline">Kernel module delivering transparent encryption for USB storage.</p>
-                  </div>
-                  <div class="project-pill-group">
-                    <span class="project-pill">AES-256</span>
-                    <span class="project-pill">Custom ioctl</span>
-                  </div>
-                </div>
-                <div class="project-body">
-                  <p class="project-summary">Implemented block-level encryption and secure key derivation so removable drives stay protected without extra user tooling.</p>
-                  <ul class="project-details">
-                    <li>
-                      <span class="detail-label">Stack</span>
-                      <span class="detail-value stack-list">
-                        <span class="stack-pill">C</span>
-                        <span class="stack-pill">Linux Kernel</span>
-                        <span class="stack-pill">PBKDF2</span>
-                      </span>
-                    </li>
-                    <li><span class="detail-label">Impact</span><span class="detail-value">Hardened lab data workflows</span></li>
-                  </ul>
-                </div>
-              </a>
-            </li>
-
-            <li class="project-item active" data-filter-item data-category="cloud">
-              <a href="#" class="project-card" data-project-name="Smart Classroom Assistant">
-                <div class="project-card-header">
-                  <div class="project-card-meta">
-                    <span class="project-chip">Cloud</span>
-                    <h3 class="project-title">Smart Classroom Assistant</h3>
-                    <p class="project-tagline">Serverless attendance system combining facial recognition and storage orchestration.</p>
-                  </div>
-                  <div class="project-pill-group">
-                    <span class="project-pill">OpenFaaS</span>
-                    <span class="project-pill">Ceph Storage</span>
-                  </div>
-                </div>
-                <div class="project-body">
-                  <p class="project-summary">Connected a Flask control plane to AWS Lambda workflows and Ceph-backed persistence to automate classroom check-ins in real time.</p>
-                  <ul class="project-details">
-                    <li>
-                      <span class="detail-label">Stack</span>
-                      <span class="detail-value stack-list">
-                        <span class="stack-pill">AWS</span>
-                        <span class="stack-pill">Flask</span>
-                        <span class="stack-pill">OpenFaaS</span>
-                        <span class="stack-pill">DynamoDB</span>
-                      </span>
-                    </li>
-                    <li><span class="detail-label">Impact</span><span class="detail-value">Reduced roster reconciliation to seconds</span></li>
-                  </ul>
-                </div>
-              </a>
-            </li>
-
-            <li class="project-item active" data-filter-item data-category="systems">
-              <a href="#" class="project-card" data-project-name="Distributed Hash Table">
-                <div class="project-card-header">
-                  <div class="project-card-meta">
-                    <span class="project-chip">Systems</span>
-                    <h3 class="project-title">Distributed Hash Table Protocol</h3>
-                    <p class="project-tagline">Ring-topology DHT with resilient UDP messaging.</p>
-                  </div>
-                  <div class="project-pill-group">
-                    <span class="project-pill">Ring Topology</span>
-                    <span class="project-pill">C++ Threads</span>
-                  </div>
-                </div>
-                <div class="project-body">
-                  <p class="project-summary">Authored custom packet formats and multithreaded handlers to keep key/value lookups responsive under churn.</p>
-                  <ul class="project-details">
-                    <li>
-                      <span class="detail-label">Stack</span>
-                      <span class="detail-value stack-list">
-                        <span class="stack-pill">C++</span>
-                        <span class="stack-pill">UDP</span>
-                        <span class="stack-pill">POSIX Threads</span>
-                      </span>
-                    </li>
-                    <li><span class="detail-label">Impact</span><span class="detail-value">Sustained low-latency routing</span></li>
                   </ul>
                 </div>
               </a>
